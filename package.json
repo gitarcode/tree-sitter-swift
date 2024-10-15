@@ -18,18 +18,11 @@
     "type": "git",
     "url": "git+https://github.com/alex-pinkus/tree-sitter-swift.git"
   },
-  "tree-sitter": [
-    {
-      "scope": "source.swift",
-      "file-types": [
-        "swift"
-      ],
-      "injection-regex": "swift",
-      "highlights": "queries/highlights.scm",
-      "locals": "queries/locals.scm",
-      "injections": "queries/injections.scm"
-    }
-  ],
+  "devDependencies": {
+    "node-gyp": "^10.0.1",
+    "prebuildify": "^6.0.0",
+    "prettier": "2.3.2"
+  },
   "keywords": [
     "parser",
     "swift"
@@ -62,10 +55,5 @@
     "tree_sitter": {
       "optional": true
     }
-  },
-  "devDependencies": {
-    "node-gyp": "^10.0.1",
-    "prebuildify": "^6.0.0",
-    "prettier": "2.3.2"
   }
 }

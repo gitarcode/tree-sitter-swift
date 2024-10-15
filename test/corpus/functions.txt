@@ -27,8 +27,9 @@ func test<T>(t: T) {}
         (type_identifier)))
     (parameter
       (simple_identifier)
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (function_body)))
 
 ================================================================================
@@ -51,12 +52,14 @@ static func === (lhs: MyType, rhs: MyType) { }
       (property_modifier))
     (parameter
       (simple_identifier)
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (parameter
       (simple_identifier)
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (function_body)))
 
 ================================================================================
@@ -78,19 +81,23 @@ func sum(a: Int, b: Int!) { return a + b }
     (simple_identifier)
     (parameter
       (simple_identifier)
-      (array_type
-        (user_type
-          (type_identifier))))
+      (type
+        (array_type
+          (type
+            (user_type
+              (type_identifier))))))
     (function_body))
   (function_declaration
     (simple_identifier)
     (parameter
       (simple_identifier)
-      (user_type
-        (type_identifier)
-        (type_arguments
-          (user_type
-            (type_identifier)))))
+      (type
+        (user_type
+          (type_identifier)
+          (type_arguments
+            (type
+              (user_type
+                (type_identifier)))))))
     (function_body))
   (function_declaration
     (simple_identifier)
@@ -99,22 +106,27 @@ func sum(a: Int, b: Int!) { return a + b }
         (type_identifier)))
     (parameter
       (simple_identifier)
-      (dictionary_type
-        (user_type
-          (type_identifier))
-        (user_type
-          (type_identifier))))
+      (type
+        (dictionary_type
+          (type
+            (user_type
+              (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))))
     (function_body))
   (function_declaration
     (simple_identifier)
     (parameter
       (simple_identifier)
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (parameter
       (simple_identifier)
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (function_body
       (statements
         (control_transfer_statement
@@ -138,13 +150,15 @@ sum(1, with: 2)
     (parameter
       (simple_identifier)
       (simple_identifier)
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (parameter
       (simple_identifier)
       (simple_identifier)
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (function_body
       (statements
         (control_transfer_statement
@@ -181,22 +195,26 @@ func returnGetsImplicitlyUnwrapped() -> String! {
 
 --------------------------------------------------------------------------------
 
-(source_file
+ (source_file
   (function_declaration
     (simple_identifier)
-    (user_type
-      (type_identifier))
+    (type
+      (user_type
+        (type_identifier)))
     (function_body
       (statements
         (control_transfer_statement
           (integer_literal)))))
   (function_declaration
     (simple_identifier)
-    (dictionary_type
-      (user_type
-        (type_identifier))
-      (user_type
-        (type_identifier)))
+    (type
+      (dictionary_type
+        (type
+          (user_type
+            (type_identifier)))
+        (type
+          (user_type
+            (type_identifier)))))
     (function_body
       (statements
         (control_transfer_statement
@@ -212,11 +230,13 @@ func returnGetsImplicitlyUnwrapped() -> String! {
             (integer_literal))))))
   (function_declaration
     (simple_identifier)
-    (user_type
-      (type_identifier))
+    (type
+      (user_type
+        (type_identifier)))
     (function_body
       (statements
         (control_transfer_statement)))))
+
 
 ================================================================================
 Variadic functions
@@ -231,11 +251,14 @@ func toUpperCaseAll(strings: String ...) -> [String] { }
     (simple_identifier)
     (parameter
       (simple_identifier)
-      (user_type
-        (type_identifier)))
-    (array_type
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
+    (type
+      (array_type
+        (type
+          (user_type
+            (type_identifier)))))
     (function_body)))
 
 ================================================================================
@@ -263,20 +286,25 @@ public prefix func ! (value: Wrapped<F>) -> Bool {
       (property_modifier))
     (parameter
       (simple_identifier)
-      (user_type
-        (type_identifier)
-        (type_arguments
-          (user_type
-            (type_identifier)))))
+      (type
+        (user_type
+          (type_identifier)
+          (type_arguments
+            (type
+              (user_type
+                (type_identifier)))))))
     (parameter
       (simple_identifier)
+      (type
+        (user_type
+          (type_identifier)
+          (type_arguments
+            (type
+              (user_type
+                (type_identifier)))))))
+    (type
       (user_type
-        (type_identifier)
-        (type_arguments
-          (user_type
-            (type_identifier)))))
-    (user_type
-      (type_identifier))
+        (type_identifier)))
     (function_body
       (statements
         (control_transfer_statement
@@ -288,25 +316,31 @@ public prefix func ! (value: Wrapped<F>) -> Bool {
     (type_parameters
       (type_parameter
         (type_identifier)
-        (user_type
-          (type_identifier))))
+        (type
+          (user_type
+            (type_identifier)))))
     (parameter
       (simple_identifier)
+      (type
+        (user_type
+          (type_identifier)
+          (type_arguments
+            (type
+              (optional_type
+                (user_type
+                  (type_identifier))))))))
+    (parameter
+      (simple_identifier)
+      (type
+        (user_type
+          (type_identifier))))
+    (type
       (user_type
         (type_identifier)
         (type_arguments
-          (optional_type
+          (type
             (user_type
               (type_identifier))))))
-    (parameter
-      (simple_identifier)
-      (user_type
-        (type_identifier)))
-    (user_type
-      (type_identifier)
-      (type_arguments
-        (user_type
-          (type_identifier))))
     (function_body
       (statements
         (control_transfer_statement
@@ -331,13 +365,16 @@ public prefix func ! (value: Wrapped<F>) -> Bool {
     (bang)
     (parameter
       (simple_identifier)
+      (type
+        (user_type
+          (type_identifier)
+          (type_arguments
+            (type
+              (user_type
+                (type_identifier)))))))
+    (type
       (user_type
-        (type_identifier)
-        (type_arguments
-          (user_type
-            (type_identifier)))))
-    (user_type
-      (type_identifier))
+        (type_identifier)))
     (function_body
       (statements
         (control_transfer_statement
@@ -412,8 +449,9 @@ func iCanDoBetter()
   (function_declaration
     (simple_identifier)
     (throws)
-    (user_type
-      (type_identifier))
+    (type
+      (user_type
+        (type_identifier)))
     (function_body
       (statements
         (control_transfer_statement
@@ -422,8 +460,9 @@ func iCanDoBetter()
   (function_declaration
     (simple_identifier)
     (throws)
-    (user_type
-      (type_identifier))
+    (type
+      (user_type
+        (type_identifier)))
     (function_body
       (statements
         (control_transfer_statement
@@ -445,8 +484,9 @@ func maybe()
 (source_file
   (function_declaration
     (simple_identifier)
-    (user_type
-      (type_identifier))
+    (type
+      (user_type
+        (type_identifier)))
     (function_body
       (statements
         (control_transfer_statement
@@ -455,8 +495,9 @@ func maybe()
   (function_declaration
     (simple_identifier)
     (throws)
-    (user_type
-      (type_identifier))
+    (type
+      (user_type
+        (type_identifier)))
     (function_body
       (statements
         (control_transfer_statement
@@ -476,19 +517,23 @@ func test(i: Int = 0, block: (Int) throws -> Void) {}
     (simple_identifier)
     (parameter
       (simple_identifier)
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (integer_literal)
     (parameter
       (simple_identifier)
-      (function_type
-        (tuple_type
-          (tuple_type_item
+      (type
+        (function_type
+          (tuple_type
+            (tuple_type_item
+              (type
+                (user_type
+                  (type_identifier)))))
+          (throws)
+          (type
             (user_type
-              (type_identifier))))
-        (throws)
-        (user_type
-          (type_identifier))))
+              (type_identifier))))))
     (function_body)))
 
 ================================================================================
@@ -552,8 +597,9 @@ test { (a) -> Void in }
           (lambda_function_type_parameters
             (lambda_parameter
               (simple_identifier)))
-          (user_type
-            (type_identifier)))))))
+          (type
+            (user_type
+              (type_identifier))))))))
 
 ================================================================================
 Higher-order functions - pt 5
@@ -574,8 +620,9 @@ test { (a: inout Int) in }
               (simple_identifier)
               (parameter_modifiers
                 (parameter_modifier))
-              (user_type
-                (type_identifier)))))))))
+              (type
+                (user_type
+                  (type_identifier))))))))))
 
 ================================================================================
 Higher-order functions - pt 6
@@ -658,8 +705,9 @@ test { (self, a) -> Void in }
               (self_expression))
             (lambda_parameter
               (simple_identifier)))
-          (user_type
-            (type_identifier)))))))
+          (type
+            (user_type
+              (type_identifier))))))))
 
 ================================================================================
 Higher-order functions - pt 10
@@ -678,9 +726,10 @@ test { (a: Any?) in foo(a) }
           (lambda_function_type_parameters
             (lambda_parameter
               (simple_identifier)
-              (optional_type
-                (user_type
-                  (type_identifier))))))
+              (type
+                (optional_type
+                  (user_type
+                    (type_identifier)))))))
         (statements
           (call_expression
             (simple_identifier)
@@ -728,16 +777,19 @@ private lazy var onCatClosure: (_ cat: Cat) throws -> Void = { _ in
     (pattern
       (simple_identifier))
     (type_annotation
-      (function_type
-        (tuple_type
-          (tuple_type_item
-            (wildcard_pattern)
-            (simple_identifier)
+      (type
+        (function_type
+          (tuple_type
+            (tuple_type_item
+              (wildcard_pattern)
+              (simple_identifier)
+              (type
+                (user_type
+                  (type_identifier)))))
+          (throws)
+          (type
             (user_type
-              (type_identifier))))
-        (throws)
-        (user_type
-          (type_identifier))))
+              (type_identifier))))))
     (lambda_literal
       (lambda_function_type
         (lambda_function_type_parameters
@@ -775,20 +827,22 @@ func multipleType() -> Foo & Bar { return Foo() }
 (source_file
   (function_declaration
     (simple_identifier)
-    (opaque_type
-      (user_type
-        (type_identifier)))
+    (type
+      (opaque_type
+        (user_type
+          (type_identifier))))
     (function_body
       (statements
         (control_transfer_statement
           (line_string_literal)))))
   (function_declaration
     (simple_identifier)
-    (protocol_composition_type
-      (user_type
-        (type_identifier))
-      (user_type
-        (type_identifier)))
+    (type
+      (protocol_composition_type
+        (user_type
+          (type_identifier))
+        (user_type
+          (type_identifier))))
     (function_body
       (statements
         (control_transfer_statement
@@ -855,15 +909,18 @@ public static func & (lhs: Self, rhs: some SQLExpressible) -> SQLExpression {
       (property_modifier))
     (parameter
       (simple_identifier)
-      (user_type
-        (type_identifier)))
-    (parameter
-      (simple_identifier)
-      (opaque_type
+      (type
         (user_type
           (type_identifier))))
-    (user_type
-      (type_identifier))
+    (parameter
+      (simple_identifier)
+      (type
+        (opaque_type
+          (user_type
+            (type_identifier)))))
+    (type
+      (user_type
+        (type_identifier)))
     (function_body
       (statements
         (call_expression
@@ -947,8 +1004,9 @@ func foo(_: inout Foo) {}
       (simple_identifier)
       (parameter_modifiers
         (parameter_modifier))
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (function_body))
   (function_declaration
     (simple_identifier)
@@ -956,8 +1014,9 @@ func foo(_: inout Foo) {}
       (simple_identifier)
       (parameter_modifiers
         (parameter_modifier))
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (function_body))
   (function_declaration
     (simple_identifier)
@@ -965,8 +1024,9 @@ func foo(_: inout Foo) {}
       (simple_identifier)
       (parameter_modifiers
         (parameter_modifier))
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (function_body)))
 
 ================================================================================
@@ -990,8 +1050,9 @@ bar { (a: inout Foo) in a.foo() }
               (simple_identifier)
               (parameter_modifiers
                 (parameter_modifier))
-              (user_type
-                (type_identifier)))))
+              (type
+                (user_type
+                  (type_identifier))))))
         (statements
           (call_expression
             (navigation_expression
@@ -1010,8 +1071,9 @@ bar { (a: inout Foo) in a.foo() }
               (simple_identifier)
               (parameter_modifiers
                 (parameter_modifier))
-              (user_type
-                (type_identifier)))))
+              (type
+                (user_type
+                  (type_identifier))))))
         (statements
           (call_expression
             (navigation_expression
@@ -1030,8 +1092,9 @@ bar { (a: inout Foo) in a.foo() }
               (simple_identifier)
               (parameter_modifiers
                 (parameter_modifier))
-              (user_type
-                (type_identifier)))))
+              (type
+                (user_type
+                  (type_identifier))))))
         (statements
           (call_expression
             (navigation_expression
@@ -1057,15 +1120,18 @@ let f: (inout Foo) -> Void = { a in a.foo() }
     (pattern
       (simple_identifier))
     (type_annotation
-      (function_type
-        (tuple_type
-          (tuple_type_item
-            (parameter_modifiers
-              (parameter_modifier))
+      (type
+        (function_type
+          (tuple_type
+            (tuple_type_item
+              (parameter_modifiers
+                (parameter_modifier))
+              (type
+                (user_type
+                  (type_identifier)))))
+          (type
             (user_type
-              (type_identifier))))
-        (user_type
-          (type_identifier))))
+              (type_identifier))))))
     (lambda_literal
       (lambda_function_type
         (lambda_function_type_parameters
@@ -1084,15 +1150,18 @@ let f: (inout Foo) -> Void = { a in a.foo() }
     (pattern
       (simple_identifier))
     (type_annotation
-      (function_type
-        (tuple_type
-          (tuple_type_item
-            (parameter_modifiers
-              (parameter_modifier))
+      (type
+        (function_type
+          (tuple_type
+            (tuple_type_item
+              (parameter_modifiers
+                (parameter_modifier))
+              (type
+                (user_type
+                  (type_identifier)))))
+          (type
             (user_type
-              (type_identifier))))
-        (user_type
-          (type_identifier))))
+              (type_identifier))))))
     (lambda_literal
       (lambda_function_type
         (lambda_function_type_parameters
@@ -1111,15 +1180,18 @@ let f: (inout Foo) -> Void = { a in a.foo() }
     (pattern
       (simple_identifier))
     (type_annotation
-      (function_type
-        (tuple_type
-          (tuple_type_item
-            (parameter_modifiers
-              (parameter_modifier))
+      (type
+        (function_type
+          (tuple_type
+            (tuple_type_item
+              (parameter_modifiers
+                (parameter_modifier))
+              (type
+                (user_type
+                  (type_identifier)))))
+          (type
             (user_type
-              (type_identifier))))
-        (user_type
-          (type_identifier))))
+              (type_identifier))))))
     (lambda_literal
       (lambda_function_type
         (lambda_function_type_parameters
@@ -1184,26 +1256,32 @@ func < <each Element: Comparable>(lhs: (repeat each Element), rhs: (repeat each 
         (type_parameter_pack
           (user_type
             (type_identifier)))
-        (user_type
-          (type_identifier))))
+        (type
+          (user_type
+            (type_identifier)))))
     (parameter
       (simple_identifier)
-      (tuple_type
-        (tuple_type_item
-          (type_pack_expansion
-            (type_parameter_pack
-              (user_type
-                (type_identifier)))))))
+      (type
+        (tuple_type
+          (tuple_type_item
+            (type
+              (type_pack_expansion
+                (type_parameter_pack
+                  (user_type
+                    (type_identifier)))))))))
     (parameter
       (simple_identifier)
-      (tuple_type
-        (tuple_type_item
-          (type_pack_expansion
-            (type_parameter_pack
-              (user_type
-                (type_identifier)))))))
-    (user_type
-      (type_identifier))
+      (type
+        (tuple_type
+          (tuple_type_item
+            (type
+              (type_pack_expansion
+                (type_parameter_pack
+                  (user_type
+                    (type_identifier)))))))))
+    (type
+      (user_type
+        (type_identifier)))
     (function_body)))
 
 ================================================================================
@@ -1227,10 +1305,11 @@ func variadic<each S: Sequence, each T>(_: repeat each S) where repeat (each S).
     (parameter
       (simple_identifier)
       (simple_identifier)
-      (type_pack_expansion
-        (type_parameter_pack
-          (user_type
-            (type_identifier)))))
+      (type
+        (type_pack_expansion
+          (type_parameter_pack
+            (user_type
+              (type_identifier))))))
     (type_constraints
       (where_keyword)
       (type_constraint
@@ -1239,8 +1318,9 @@ func variadic<each S: Sequence, each T>(_: repeat each S) where repeat (each S).
             (type_parameter_pack
               (user_type
                 (type_identifier))))
-          (user_type
-            (type_identifier)))))
+          (type
+            (user_type
+              (type_identifier))))))
     (function_body))
   (function_declaration
     (simple_identifier)
@@ -1249,16 +1329,18 @@ func variadic<each S: Sequence, each T>(_: repeat each S) where repeat (each S).
         (type_parameter_pack
           (user_type
             (type_identifier)))
-        (user_type
-          (type_identifier)))
+        (type
+          (user_type
+            (type_identifier))))
       (type_parameter
         (type_identifier)))
     (parameter
       (simple_identifier)
-      (type_pack_expansion
-        (type_parameter_pack
-          (user_type
-            (type_identifier)))))
+      (type
+        (type_pack_expansion
+          (type_parameter_pack
+            (user_type
+              (type_identifier))))))
     (type_constraints
       (where_keyword)
       (type_constraint
@@ -1266,12 +1348,14 @@ func variadic<each S: Sequence, each T>(_: repeat each S) where repeat (each S).
           (type_pack_expansion
             (tuple_type
               (tuple_type_item
-                (type_parameter_pack
-                  (user_type
-                    (type_identifier))))))
+                (type
+                  (type_parameter_pack
+                    (user_type
+                      (type_identifier)))))))
           (simple_identifier)
-          (user_type
-            (type_identifier)))))
+          (type
+            (user_type
+              (type_identifier))))))
     (function_body))
   (function_declaration
     (simple_identifier)
@@ -1280,18 +1364,20 @@ func variadic<each S: Sequence, each T>(_: repeat each S) where repeat (each S).
         (type_parameter_pack
           (user_type
             (type_identifier)))
-        (user_type
-          (type_identifier)))
+        (type
+          (user_type
+            (type_identifier))))
       (type_parameter
         (type_parameter_pack
           (user_type
             (type_identifier)))))
     (parameter
       (simple_identifier)
-      (type_pack_expansion
-        (type_parameter_pack
-          (user_type
-            (type_identifier)))))
+      (type
+        (type_pack_expansion
+          (type_parameter_pack
+            (user_type
+              (type_identifier))))))
     (type_constraints
       (where_keyword)
       (type_constraint
@@ -1299,16 +1385,19 @@ func variadic<each S: Sequence, each T>(_: repeat each S) where repeat (each S).
           (type_pack_expansion
             (tuple_type
               (tuple_type_item
-                (type_parameter_pack
-                  (user_type
-                    (type_identifier))))))
+                (type
+                  (type_parameter_pack
+                    (user_type
+                      (type_identifier)))))))
           (simple_identifier)
-          (user_type
-            (type_identifier)
-            (type_arguments
-              (type_parameter_pack
-                (user_type
-                  (type_identifier))))))))
+          (type
+            (user_type
+              (type_identifier)
+              (type_arguments
+                (type
+                  (type_parameter_pack
+                    (user_type
+                      (type_identifier))))))))))
     (function_body)))
 
 ================================================================================
@@ -1338,29 +1427,35 @@ func makePairs<each First, each Second>(
     (parameter
       (simple_identifier)
       (simple_identifier)
-      (type_pack_expansion
-        (type_parameter_pack
-          (user_type
-            (type_identifier)))))
+      (type
+        (type_pack_expansion
+          (type_parameter_pack
+            (user_type
+              (type_identifier))))))
     (parameter
       (simple_identifier)
       (simple_identifier)
-      (type_pack_expansion
-        (type_parameter_pack
-          (user_type
-            (type_identifier)))))
-    (tuple_type
-      (tuple_type_item
+      (type
         (type_pack_expansion
-          (user_type
-            (type_identifier)
-            (type_arguments
-              (type_parameter_pack
-                (user_type
-                  (type_identifier)))
-              (type_parameter_pack
-                (user_type
-                  (type_identifier))))))))
+          (type_parameter_pack
+            (user_type
+              (type_identifier))))))
+    (type
+      (tuple_type
+        (tuple_type_item
+          (type
+            (type_pack_expansion
+              (user_type
+                (type_identifier)
+                (type_arguments
+                  (type
+                    (type_parameter_pack
+                      (user_type
+                        (type_identifier))))
+                  (type
+                    (type_parameter_pack
+                      (user_type
+                        (type_identifier)))))))))))
     (function_body
       (statements
         (control_transfer_statement

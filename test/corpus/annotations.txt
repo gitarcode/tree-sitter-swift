@@ -44,8 +44,9 @@ class X {
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier)))))))
+          (type
+            (user_type
+              (type_identifier))))))))
 
 ================================================================================
 Multiple annotations on a function
@@ -71,6 +72,7 @@ class X {
             (user_type
               (type_identifier))))
         (simple_identifier)
-        (user_type
-          (type_identifier))
+        (type
+          (user_type
+            (type_identifier)))
         (function_body)))))

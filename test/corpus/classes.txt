@@ -72,8 +72,9 @@ class Strings {
       (comment)
       (function_declaration
         (simple_identifier)
-        (user_type
-          (type_identifier))
+        (type
+          (user_type
+            (type_identifier)))
         (function_body
           (statements
             (control_transfer_statement
@@ -81,8 +82,9 @@ class Strings {
                 (line_str_text))))))
       (function_declaration
         (simple_identifier)
-        (user_type
-          (type_identifier))
+        (type
+          (user_type
+            (type_identifier)))
         (function_body
           (statements
             (control_transfer_statement
@@ -121,8 +123,9 @@ internal open class Test {
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier))))
+          (type
+            (user_type
+              (type_identifier)))))
       (property_declaration
         (modifiers
           (visibility_modifier))
@@ -130,8 +133,9 @@ internal open class Test {
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier))))
+          (type
+            (user_type
+              (type_identifier)))))
       (multiline_comment)
       (function_declaration
         (modifiers
@@ -178,8 +182,9 @@ class Test : Protocol {
         (parameter
           (simple_identifier)
           (simple_identifier)
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (function_body))
       (function_declaration
         (modifiers
@@ -193,8 +198,9 @@ class Test : Protocol {
         (parameter
           (simple_identifier)
           (simple_identifier)
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (function_body)))))
 
 ================================================================================
@@ -229,11 +235,13 @@ class GenericSubscript {
           (visibility_modifier))
         (parameter
           (simple_identifier)
-          (user_type
-            (type_identifier)))
-        (optional_type
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
+        (type      
+          (optional_type
+            (user_type
+              (type_identifier))))
         (computed_property
           (computed_getter
             (getter_specifier)
@@ -275,16 +283,20 @@ class GenericSubscript {
         (parameter
           (simple_identifier)
           (simple_identifier)
+          (type
+            (user_type
+              (type_identifier)
+              (type_arguments
+                (type
+                  (user_type
+                    (type_identifier)))))))
+        (type         
           (user_type
             (type_identifier)
             (type_arguments
-              (user_type
-                (type_identifier)))))
-        (user_type
-          (type_identifier)
-          (type_arguments
-            (user_type
-              (type_identifier))))
+              (type
+                (user_type
+                  (type_identifier))))))
         (computed_property
           (statements
             (control_transfer_statement
@@ -315,22 +327,26 @@ class Subscriptable {
         (parameter
           (simple_identifier)
           (simple_identifier)
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (parameter
           (simple_identifier)
+          (type
+            (user_type
+              (type_identifier))))
+        (type
           (user_type
             (type_identifier)))
-        (user_type
-          (type_identifier))
         (type_constraints
           (where_keyword)
           (type_constraint
             (inheritance_constraint
               (identifier
                 (simple_identifier))
-              (user_type
-                (type_identifier)))))
+              (type
+                (user_type
+                  (type_identifier))))))
         (computed_property
           (statements
             (control_transfer_statement
@@ -404,17 +420,19 @@ class SomethingElse: ThingProvider {
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (integer_literal))
       (property_declaration
         (value_binding_pattern)
         (pattern
           (simple_identifier))
         (type_annotation
-          (optional_type
-            (user_type
-              (type_identifier)))))
+          (type
+            (optional_type
+              (user_type
+                (type_identifier))))))
       (property_declaration
         (modifiers
           (property_behavior_modifier))
@@ -422,16 +440,18 @@ class SomethingElse: ThingProvider {
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (simple_identifier))
       (property_declaration
         (value_binding_pattern)
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (computed_property
           (statements
             (simple_identifier))))
@@ -440,8 +460,9 @@ class SomethingElse: ThingProvider {
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (computed_property
           (computed_getter
             (getter_specifier)
@@ -455,8 +476,9 @@ class SomethingElse: ThingProvider {
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (computed_property
           (computed_getter
             (getter_specifier)
@@ -481,8 +503,9 @@ class SomethingElse: ThingProvider {
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (computed_property
           (statements
             (guard_statement
@@ -525,8 +548,9 @@ class Alphabet {
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (computed_property
           (computed_getter
             (getter_specifier)
@@ -551,8 +575,9 @@ class Cat { let noise: String = "meow"; let claws: String = "retractable" }
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (line_string_literal
           (line_str_text)))))
   (class_declaration
@@ -563,8 +588,9 @@ class Cat { let noise: String = "meow"; let claws: String = "retractable" }
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (line_string_literal
           (line_str_text)))
       (property_declaration
@@ -572,8 +598,9 @@ class Cat { let noise: String = "meow"; let claws: String = "retractable" }
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (line_string_literal
           (line_str_text))))))
 
@@ -593,11 +620,12 @@ var propertyMap: NodePropertyMap & KeypathSearchable {
     (pattern
       (simple_identifier))
     (type_annotation
-      (protocol_composition_type
-        (user_type
-          (type_identifier))
-        (user_type
-          (type_identifier))))
+      (type
+        (protocol_composition_type
+          (user_type
+            (type_identifier))
+          (user_type
+            (type_identifier)))))
     (computed_property
       (statements
         (control_transfer_statement
@@ -626,8 +654,9 @@ struct Adder {
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier))))
+          (type
+            (user_type
+              (type_identifier)))))
       (function_declaration
         (modifiers
           (mutation_modifier))
@@ -667,18 +696,21 @@ protocol Wrapper {
     (protocol_body
       (associatedtype_declaration
         (type_identifier)
-        (user_type
-          (type_identifier)))
+        (type
+          (user_type
+            (type_identifier))))
       (associatedtype_declaration
         (type_identifier)
-        (user_type
-          (type_identifier)))
+        (type
+          (user_type
+            (type_identifier))))
       (protocol_function_declaration
         (simple_identifier)
-        (optional_type
-          (user_type
-            (type_identifier)
-            (type_identifier)))
+        (type
+          (optional_type
+            (user_type
+              (type_identifier)
+              (type_identifier))))
         (type_constraints
           (where_keyword)
           (type_constraint
@@ -686,8 +718,9 @@ protocol Wrapper {
               (identifier
                 (simple_identifier)
                 (simple_identifier))
-              (user_type
-                (type_identifier))))))))
+              (type
+                (user_type
+                  (type_identifier)))))))))
   (protocol_declaration
     (modifiers
       (visibility_modifier))
@@ -698,8 +731,9 @@ protocol Wrapper {
           (value_binding_pattern)
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (protocol_property_requirements
           (getter_specifier
             (mutation_modifier))))))
@@ -708,8 +742,9 @@ protocol Wrapper {
     (protocol_body
       (associatedtype_declaration
         (type_identifier)
-        (user_type
-          (type_identifier))
+        (type
+          (user_type
+            (type_identifier)))
         (type_constraints
           (where_keyword)
           (type_constraint
@@ -717,8 +752,9 @@ protocol Wrapper {
               (identifier
                 (simple_identifier)
                 (simple_identifier))
-              (user_type
-                (type_identifier)))))))))
+              (type
+                (user_type
+                  (type_identifier))))))))))
 
 ================================================================================
 Protocol with subscript
@@ -739,11 +775,13 @@ public protocol Indexable {
       (subscript_declaration
         (parameter
           (simple_identifier)
-          (user_type
-            (type_identifier)))
-        (optional_type
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
+        (type
+          (optional_type
+            (user_type
+              (type_identifier))))
         (computed_property
           (computed_getter
             (getter_specifier)))))))
@@ -767,11 +805,12 @@ class SomeClassWithAlias: NSObject {
     (class_body
       (typealias_declaration
         (type_identifier)
-        (protocol_composition_type
-          (user_type
-            (type_identifier))
-          (user_type
-            (type_identifier)))))))
+        (type
+          (protocol_composition_type
+            (user_type
+              (type_identifier))
+            (user_type
+              (type_identifier))))))))
 
 ================================================================================
 Special constructors
@@ -810,26 +849,30 @@ class Test {
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier))))
+          (type
+            (user_type
+              (type_identifier)))))
       (property_declaration
         (value_binding_pattern)
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier))))
+          (type
+            (user_type
+              (type_identifier)))))
       (init_declaration
         (parameter
           (simple_identifier)
           (simple_identifier)
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (parameter
           (simple_identifier)
           (simple_identifier)
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (function_body
           (statements
             (assignment
@@ -868,8 +911,9 @@ class Test {
           (member_modifier))
         (parameter
           (simple_identifier)
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (function_body
           (statements
             (call_expression
@@ -890,8 +934,9 @@ class Test {
         (parameter
           (simple_identifier)
           (simple_identifier)
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (function_body
           (statements
             (call_expression
@@ -985,8 +1030,9 @@ enum CStyle {
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (call_expression
           (prefix_expression
             (simple_identifier))
@@ -999,46 +1045,57 @@ enum CStyle {
         (simple_identifier)
         (enum_type_parameters
           (simple_identifier)
-          (user_type
-            (type_identifier))))
+          (type
+            (user_type
+              (type_identifier)))))
       (enum_entry
         (simple_identifier)
         (enum_type_parameters
           (simple_identifier)
-          (user_type
-            (type_identifier))))
+          (type
+            (user_type
+              (type_identifier)))))
       (enum_entry
         (simple_identifier)
         (enum_type_parameters
           (simple_identifier)
-          (user_type
-            (type_identifier))))
+          (type
+            (user_type
+              (type_identifier)))))
       (enum_entry
         (simple_identifier)
         (simple_identifier)
         (simple_identifier)
         (enum_type_parameters
-          (user_type
-            (type_identifier))))
+          (type
+            (user_type
+              (type_identifier)))))
       (enum_entry
         (simple_identifier)
         (enum_type_parameters
-          (user_type
-            (type_identifier)
-            (type_arguments
-              (user_type
-                (type_identifier))
-              (user_type
-                (type_identifier))
-              (user_type
-                (type_identifier))))
+          (type
+            (user_type
+              (type_identifier)
+              (type_arguments
+                (type
+                  (user_type
+                    (type_identifier)))
+                (type    
+                  (user_type
+                    (type_identifier)))
+                (type    
+                  (user_type
+                    (type_identifier))))))
           (wildcard_pattern)
           (simple_identifier)
-          (dictionary_type
-            (user_type
-              (type_identifier))
-            (user_type
-              (type_identifier)))
+          (type
+            (dictionary_type
+              (type
+                (user_type
+                  (type_identifier)))
+              (type
+                (user_type
+                  (type_identifier)))))
           (dictionary_literal)))
       (function_declaration
         (simple_identifier)
@@ -1101,8 +1158,9 @@ extension [SpecialItem] {
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (line_string_literal
           (line_str_text)))))
   (class_declaration
@@ -1114,15 +1172,17 @@ extension [SpecialItem] {
         (inheritance_constraint
           (identifier
             (simple_identifier))
-          (user_type
-            (type_identifier))))
+          (type
+            (user_type
+              (type_identifier)))))
       (type_constraint
         (equality_constraint
           (identifier
             (simple_identifier)
             (simple_identifier))
-          (user_type
-            (type_identifier)))))
+          (type
+            (user_type
+              (type_identifier))))))
     (class_body))
   (class_declaration
     (modifiers
@@ -1135,20 +1195,24 @@ extension [SpecialItem] {
         (equality_constraint
           (identifier
             (simple_identifier))
-          (tuple_type
-            (tuple_type_item
-              (simple_identifier)
-              (user_type
-                (type_identifier)))
-            (tuple_type_item
-              (simple_identifier)
-              (user_type
-                (type_identifier)))))))
+          (type
+            (tuple_type
+              (tuple_type_item
+                (simple_identifier)
+                (type
+                  (user_type
+                    (type_identifier))))
+              (tuple_type_item
+                (simple_identifier)
+                (type
+                  (user_type
+                    (type_identifier)))))))))
     (class_body))
   (class_declaration
     (array_type
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (class_body)))
 
 ================================================================================
@@ -1206,8 +1270,9 @@ enum ComputeType {
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier))))
+          (type
+            (user_type
+              (type_identifier)))))
       (function_declaration
         (modifiers
           (attribute
@@ -1258,23 +1323,26 @@ let result: HasGeneric<P1 & P2> = HasGeneric<P1 & P2>(t: "Hello")
     (pattern
       (simple_identifier))
     (type_annotation
-      (user_type
-        (type_identifier)
-        (type_arguments
-          (protocol_composition_type
-            (user_type
-              (type_identifier))
-            (user_type
-              (type_identifier))))))
+      (type
+        (user_type
+          (type_identifier)
+          (type_arguments
+            (type
+              (protocol_composition_type
+                (user_type
+                  (type_identifier))
+                (user_type
+                  (type_identifier))))))))
     (constructor_expression
       (user_type
         (type_identifier)
         (type_arguments
-          (protocol_composition_type
-            (user_type
-              (type_identifier))
-            (user_type
-              (type_identifier)))))
+          (type
+            (protocol_composition_type
+              (user_type
+                (type_identifier))
+              (user_type
+                (type_identifier))))))
       (constructor_suffix
         (value_arguments
           (value_argument
@@ -1299,26 +1367,29 @@ func iterate<S>(h: S) where S : Sequence, S.Element == P1 & P2 { }
         (type_identifier)))
     (parameter
       (simple_identifier)
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (type_constraints
       (where_keyword)
       (type_constraint
         (inheritance_constraint
           (identifier
             (simple_identifier))
-          (user_type
-            (type_identifier))))
+          (type
+            (user_type
+              (type_identifier)))))
       (type_constraint
         (equality_constraint
           (identifier
             (simple_identifier)
             (simple_identifier))
-          (protocol_composition_type
-            (user_type
-              (type_identifier))
-            (user_type
-              (type_identifier))))))
+          (type
+            (protocol_composition_type
+              (user_type
+                (type_identifier))
+              (user_type
+                (type_identifier)))))))
     (function_body)))
 
 ================================================================================
@@ -1338,11 +1409,12 @@ enum Foo {
       (enum_entry
         (simple_identifier)
         (enum_type_parameters
-          (protocol_composition_type
-            (user_type
-              (type_identifier))
-            (user_type
-              (type_identifier))))))))
+          (type
+            (protocol_composition_type
+              (user_type
+                (type_identifier))
+              (user_type
+                (type_identifier)))))))))
 
 ================================================================================
 Protocol composition in as expressions
@@ -1366,11 +1438,12 @@ let result = greet("me") as P1 & P2
               (line_string_literal
                 (line_str_text))))))
       (as_operator)
-      (protocol_composition_type
-        (user_type
-          (type_identifier))
-        (user_type
-          (type_identifier))))))
+      (type
+        (protocol_composition_type
+          (user_type
+            (type_identifier))
+          (user_type
+            (type_identifier)))))))
 
 ================================================================================
 Modify declarations
@@ -1404,8 +1477,9 @@ public final class Foo {
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier))))
+          (type
+            (user_type
+              (type_identifier)))))
       (property_declaration
         (modifiers
           (visibility_modifier))
@@ -1413,8 +1487,9 @@ public final class Foo {
         (pattern
           (simple_identifier))
         (type_annotation
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (computed_property
           (computed_getter
             (getter_specifier)
@@ -1449,8 +1524,9 @@ public var someVar: String {
     (pattern
       (simple_identifier))
     (type_annotation
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (computed_property
       (computed_getter
         (attribute
@@ -1518,8 +1594,9 @@ private actor CounterActor {
         (integer_literal))
       (function_declaration
         (simple_identifier)
-        (user_type
-          (type_identifier))
+        (type
+          (user_type
+            (type_identifier)))
         (function_body
           (statements
             (assignment
@@ -1567,9 +1644,10 @@ extension Array {
         (pattern
           (simple_identifier))
         (type_annotation
-          (opaque_type
-            (user_type
-              (type_identifier))))
+          (type
+            (opaque_type
+              (user_type
+                (type_identifier)))))
         (computed_property
           (statements
             (call_expression

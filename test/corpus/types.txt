@@ -12,18 +12,21 @@ something as! A
   (as_expression
     (simple_identifier)
     (as_operator)
-    (user_type
-      (type_identifier)))
+    (type
+      (user_type
+        (type_identifier))))
   (as_expression
     (simple_identifier)
     (as_operator)
-    (user_type
-      (type_identifier)))
+    (type
+      (user_type
+        (type_identifier))))
   (as_expression
     (simple_identifier)
     (as_operator)
-    (user_type
-      (type_identifier))))
+    (type
+      (user_type
+        (type_identifier)))))
 
 ================================================================================
 Nested types
@@ -37,9 +40,10 @@ something as Some.NestedType
   (as_expression
     (simple_identifier)
     (as_operator)
-    (user_type
-      (type_identifier)
-      (type_identifier))))
+    (type
+      (user_type
+        (type_identifier)
+        (type_identifier)))))
 
 ================================================================================
 Deeply nested types
@@ -53,11 +57,12 @@ somethingElse as A.Deeply.Nested.Type
   (as_expression
     (simple_identifier)
     (as_operator)
-    (user_type
-      (type_identifier)
-      (type_identifier)
-      (type_identifier)
-      (type_identifier))))
+    (type
+      (user_type
+        (type_identifier)
+        (type_identifier)
+        (type_identifier)
+        (type_identifier)))))
 
 ================================================================================
 Generic parameterized types
@@ -72,21 +77,26 @@ something as Generic<A, Type>
   (as_expression
     (simple_identifier)
     (as_operator)
-    (user_type
-      (type_identifier)
-      (type_arguments
-        (user_type
-          (type_identifier)))))
+    (type
+      (user_type
+        (type_identifier)
+        (type_arguments
+          (type
+            (user_type
+              (type_identifier)))))))
   (as_expression
     (simple_identifier)
     (as_operator)
-    (user_type
-      (type_identifier)
-      (type_arguments
-        (user_type
-          (type_identifier))
-        (user_type
-          (type_identifier))))))
+    (type
+      (user_type
+        (type_identifier)
+        (type_arguments
+          (type
+            (user_type
+              (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))))))
 
 ================================================================================
 Function types
@@ -102,32 +112,40 @@ configurator as (inout Config) -> Unit
   (as_expression
     (simple_identifier)
     (as_operator)
-    (function_type
-      (tuple_type)
-      (user_type
-        (type_identifier))))
+    (type
+      (function_type
+        (tuple_type)
+        (type
+          (user_type
+            (type_identifier))))))
   (as_expression
     (simple_identifier)
     (as_operator)
-    (function_type
-      (tuple_type
-        (tuple_type_item
+    (type
+      (function_type
+        (tuple_type
+          (tuple_type_item
+            (type
+              (user_type
+                (type_identifier)))))
+        (type
           (user_type
-            (type_identifier))))
-      (user_type
-        (type_identifier))))
+            (type_identifier))))))
   (as_expression
     (simple_identifier)
     (as_operator)
-    (function_type
-      (tuple_type
-        (tuple_type_item
-          (parameter_modifiers
-            (parameter_modifier))
+    (type
+      (function_type
+        (tuple_type
+          (tuple_type_item
+            (parameter_modifiers
+              (parameter_modifier))
+            (type
+              (user_type
+                (type_identifier)))))
+        (type
           (user_type
-            (type_identifier))))
-      (user_type
-        (type_identifier)))))
+            (type_identifier)))))))
 
 ================================================================================
 Function types with multiple parameters
@@ -142,38 +160,49 @@ b as (Nested.Type, (Int)) -> Unit
   (as_expression
     (simple_identifier)
     (as_operator)
-    (function_type
-      (tuple_type
-        (tuple_type_item
-          (user_type
-            (type_identifier)))
-        (tuple_type_item
-          (user_type
-            (type_identifier)
-            (type_arguments
+    (type
+      (function_type
+        (tuple_type
+          (tuple_type_item
+            (type
+              (user_type
+                (type_identifier))))
+          (tuple_type_item
+            (type
+              (user_type
+                (type_identifier)
+                (type_arguments
+                  (type
+                    (user_type
+                      (type_identifier)))))))
+          (tuple_type_item
+            (type
               (user_type
                 (type_identifier)))))
-        (tuple_type_item
+        (type
           (user_type
-            (type_identifier))))
-      (user_type
-        (type_identifier))))
+            (type_identifier))))))
   (as_expression
     (simple_identifier)
     (as_operator)
-    (function_type
-      (tuple_type
-        (tuple_type_item
-          (user_type
-            (type_identifier)
-            (type_identifier)))
-        (tuple_type_item
-          (tuple_type
-            (tuple_type_item
+    (type
+      (function_type
+        (tuple_type
+          (tuple_type_item
+            (type
               (user_type
-                (type_identifier))))))
-      (user_type
-        (type_identifier)))))
+                (type_identifier)
+                (type_identifier))))
+          (tuple_type_item
+            (type
+              (tuple_type
+                (tuple_type_item
+                  (type
+                    (user_type
+                      (type_identifier))))))))
+        (type
+          (user_type
+            (type_identifier)))))))
 
 ================================================================================
 Types with named parameters (function or tuple)
@@ -189,32 +218,39 @@ let c: (third: C, fourth: D)
   (as_expression
     (simple_identifier)
     (as_operator)
-    (function_type
-      (tuple_type
-        (tuple_type_item
-          (simple_identifier)
+    (type
+      (function_type
+        (tuple_type
+          (tuple_type_item
+            (simple_identifier)
+            (type
+              (user_type
+                (type_identifier))))
+          (tuple_type_item
+            (simple_identifier)
+            (type
+              (user_type
+                (type_identifier)))))
+        (type
           (user_type
-            (type_identifier)))
-        (tuple_type_item
-          (simple_identifier)
-          (user_type
-            (type_identifier))))
-      (user_type
-        (type_identifier))))
+            (type_identifier))))))
   (property_declaration
     (value_binding_pattern)
     (pattern
       (simple_identifier))
     (type_annotation
-      (tuple_type
-        (tuple_type_item
-          (simple_identifier)
-          (user_type
-            (type_identifier)))
-        (tuple_type_item
-          (simple_identifier)
-          (user_type
-            (type_identifier)))))))
+      (type
+        (tuple_type
+          (tuple_type_item
+            (simple_identifier)
+            (type
+              (user_type
+                (type_identifier))))
+          (tuple_type_item
+            (simple_identifier)
+            (type
+              (user_type
+                (type_identifier)))))))))
 
 ================================================================================
 Nested optional types
@@ -232,13 +268,16 @@ private var dictionary: [String: Any?]?
     (pattern
       (simple_identifier))
     (type_annotation
-      (optional_type
-        (dictionary_type
-          (user_type
-            (type_identifier))
-          (optional_type
-            (user_type
-              (type_identifier))))))))
+      (type
+        (optional_type
+          (dictionary_type
+            (type
+              (user_type
+                (type_identifier)))
+            (type
+              (optional_type
+                (user_type
+                  (type_identifier))))))))))
 
 ================================================================================
 Implicitly unwrapped optional types
@@ -256,12 +295,15 @@ private var dictionary: [String: Any?]!
     (pattern
       (simple_identifier))
     (type_annotation
-      (dictionary_type
-        (user_type
-          (type_identifier))
-        (optional_type
-          (user_type
-            (type_identifier)))))))
+      (type
+        (dictionary_type
+          (type
+            (user_type
+              (type_identifier)))
+          (type
+            (optional_type
+              (user_type
+                (type_identifier)))))))))
 
 ================================================================================
 Type aliases
@@ -280,22 +322,27 @@ public typealias IntCallback = Callback<T>
     (type_parameters
       (type_parameter
         (type_identifier)))
-    (function_type
-      (tuple_type
-        (tuple_type_item
+    (type
+      (function_type
+        (tuple_type
+          (tuple_type_item
+            (type
+              (user_type
+                (type_identifier)))))
+        (type
           (user_type
-            (type_identifier))))
-      (user_type
-        (type_identifier))))
+            (type_identifier))))))
   (typealias_declaration
     (modifiers
       (visibility_modifier))
     (type_identifier)
-    (user_type
-      (type_identifier)
-      (type_arguments
-        (user_type
-          (type_identifier))))))
+    (type
+      (user_type
+        (type_identifier)
+        (type_arguments
+          (type
+            (user_type
+              (type_identifier))))))))
 
 ================================================================================
 Metatypes
@@ -317,9 +364,11 @@ protocol GetType {
       (as_expression
         (simple_identifier)
         (as_operator)
-        (array_type
-          (user_type
-            (type_identifier))))
+        (type
+          (array_type
+            (type
+              (user_type
+                (type_identifier))))))
       (navigation_suffix
         (simple_identifier))))
   (protocol_declaration
@@ -327,9 +376,10 @@ protocol GetType {
     (protocol_body
       (protocol_function_declaration
         (simple_identifier)
-        (user_type
-          (type_identifier)
-          (type_identifier))))))
+        (type
+          (user_type
+            (type_identifier)
+            (type_identifier)))))))
 
 ================================================================================
 Existential types
@@ -346,9 +396,10 @@ func q(using p: any P) { }
     (pattern
       (simple_identifier))
     (type_annotation
-      (existential_type
-        (user_type
-          (type_identifier))))
+      (type
+        (existential_type
+          (user_type
+            (type_identifier)))))
     (call_expression
       (simple_identifier)
       (call_suffix
@@ -358,7 +409,8 @@ func q(using p: any P) { }
     (parameter
       (simple_identifier)
       (simple_identifier)
-      (existential_type
-        (user_type
-          (type_identifier))))
+      (type
+        (existential_type
+          (user_type
+            (type_identifier)))))
     (function_body)))

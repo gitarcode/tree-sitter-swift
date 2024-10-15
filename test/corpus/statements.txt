@@ -77,8 +77,9 @@ for var value in values where value.isExcellent() {
     (pattern
       (simple_identifier))
     (type_annotation
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (simple_identifier)
     (statements
       (call_expression
@@ -148,8 +149,9 @@ outerLoop: for outerObject in dataArray {
       (pattern
         (value_binding_pattern)
         (simple_identifier))
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (simple_identifier))
   (for_statement
     (pattern
@@ -470,8 +472,9 @@ do {
         (pattern
           (value_binding_pattern)
           (simple_identifier))
-        (user_type
-          (type_identifier))))
+        (type
+          (user_type
+            (type_identifier)))))
     (catch_block
       (catch_keyword)
       (pattern
@@ -484,8 +487,9 @@ do {
         (pattern
           (value_binding_pattern)
           (simple_identifier))
-        (user_type
-          (type_identifier)))
+        (type
+          (user_type
+            (type_identifier))))
       (where_clause
         (where_keyword)
         (equality_expression
@@ -567,8 +571,9 @@ someLabel: if a.isEmpty, let b = getB() {
     (value_binding_pattern)
     (simple_identifier)
     (type_annotation
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (call_expression
       (simple_identifier)
       (call_suffix
@@ -923,8 +928,9 @@ guard case let size: Int = variable.size else {
     (value_binding_pattern)
     (simple_identifier)
     (type_annotation
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (navigation_expression
       (simple_identifier)
       (navigation_suffix
@@ -1142,14 +1148,17 @@ extension LottieLoopMode: Equatable {
           (property_modifier))
         (parameter
           (simple_identifier)
-          (user_type
-            (type_identifier)))
+          (type
+            (user_type
+              (type_identifier))))
         (parameter
           (simple_identifier)
+          (type
+            (user_type
+              (type_identifier))))
+        (type
           (user_type
             (type_identifier)))
-        (user_type
-          (type_identifier))
         (function_body
           (statements
             (switch_statement
