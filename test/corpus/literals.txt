@@ -305,10 +305,12 @@ extension URL {
         (parameter
           (simple_identifier)
           (simple_identifier)
+          (type
+            (user_type
+              (type_identifier))))
+        (type
           (user_type
             (type_identifier)))
-        (user_type
-          (type_identifier))
         (function_body
           (statements
             (control_transfer_statement
@@ -518,14 +520,17 @@ let b = 0 /^/ 1
     (custom_operator)
     (parameter
       (simple_identifier)
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (parameter
       (simple_identifier)
+      (type
+        (user_type
+          (type_identifier))))
+    (type
       (user_type
         (type_identifier)))
-    (user_type
-      (type_identifier))
     (function_body
       (statements
         (integer_literal))))
@@ -724,16 +729,20 @@ class Operator {
         (pattern
           (simple_identifier))
         (type_annotation
-          (function_type
-            (tuple_type
-              (tuple_type_item
+          (type
+            (function_type
+              (tuple_type
+                (tuple_type_item
+                  (type
+                    (user_type
+                      (type_identifier))))
+                (tuple_type_item
+                  (type
+                    (user_type
+                      (type_identifier)))))
+              (type
                 (user_type
-                  (type_identifier)))
-              (tuple_type_item
-                (user_type
-                  (type_identifier))))
-            (user_type
-              (type_identifier))))
+                  (type_identifier))))))
         (computed_property
           (statements
             (control_transfer_statement

@@ -58,13 +58,15 @@ func 👨‍❤️‍💋‍👨(🙋🏼‍♂️ 🙋‍♂️: Man, 🙋🏻�
     (parameter
       (simple_identifier)
       (simple_identifier)
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (parameter
       (simple_identifier)
       (simple_identifier)
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (function_body))
   (call_expression
     (simple_identifier)

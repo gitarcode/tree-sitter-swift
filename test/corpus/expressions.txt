@@ -333,8 +333,9 @@ _ = someCall()
     (pattern
       (simple_identifier))
     (type_annotation
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (integer_literal))
   (assignment
     (directly_assignable_expression
@@ -391,8 +392,9 @@ let a: SomeClass = .someInstance
     (pattern
       (simple_identifier))
     (type_annotation
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (prefix_expression
       (simple_identifier))))
 
@@ -417,13 +419,16 @@ func math() {
           (pattern
             (simple_identifier))
           (type_annotation
-            (tuple_type
-              (tuple_type_item
-                (user_type
-                  (type_identifier)))
-              (tuple_type_item
-                (user_type
-                  (type_identifier)))))
+            (type
+              (tuple_type
+                (tuple_type_item
+                  (type
+                    (user_type
+                      (type_identifier))))
+                (tuple_type_item
+                  (type
+                    (user_type
+                      (type_identifier)))))))
           (tuple_expression
             (integer_literal)
             (integer_literal)))
@@ -489,8 +494,9 @@ var result2 = [String: [Complex<[String: Any]>]]()
       (user_type
         (type_identifier)
         (type_arguments
-          (user_type
-            (type_identifier))))
+          (type
+            (user_type
+              (type_identifier)))))
       (constructor_suffix
         (value_arguments))))
   (property_declaration
@@ -499,17 +505,23 @@ var result2 = [String: [Complex<[String: Any]>]]()
       (simple_identifier))
     (constructor_expression
       (dictionary_type
-        (user_type
-          (type_identifier))
-        (array_type
+        (type
           (user_type
-            (type_identifier)
-            (type_arguments
-              (dictionary_type
-                (user_type
-                  (type_identifier))
-                (user_type
-                  (type_identifier)))))))
+            (type_identifier)))
+        (type
+          (array_type
+            (type
+              (user_type
+                (type_identifier)
+                (type_arguments
+                  (type
+                    (dictionary_type
+                      (type
+                        (user_type
+                          (type_identifier)))
+                      (type
+                        (user_type
+                          (type_identifier)))))))))))
       (constructor_suffix
         (value_arguments)))))
 
@@ -533,11 +545,14 @@ modifyThis(&this)
       (simple_identifier)
       (parameter_modifiers
         (parameter_modifier))
-      (dictionary_type
-        (user_type
-          (type_identifier))
-        (user_type
-          (type_identifier))))
+      (type
+        (dictionary_type
+          (type
+            (user_type
+              (type_identifier)))
+          (type 
+            (user_type
+              (type_identifier))))))  
     (function_body))
   (property_declaration
     (value_binding_pattern)
@@ -646,8 +661,9 @@ let result: MyEnumType = condition ? .someEnumCase : .someOtherEnum
     (pattern
       (simple_identifier))
     (type_annotation
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (ternary_expression
       (simple_identifier)
       (prefix_expression
@@ -960,13 +976,17 @@ checkThat(dict is Dictionary<Foo, Bar>)
         (value_argument
           (check_expression
             (simple_identifier)
-            (user_type
-              (type_identifier)
-              (type_arguments
-                (user_type
-                  (type_identifier))
-                (user_type
-                  (type_identifier))))))))))
+            (type
+              (user_type
+                (type_identifier)
+                (type_arguments
+                  (type
+                    (user_type
+                      (type_identifier)))
+                  (type
+                    (user_type
+                      (type_identifier))))))))))))
+
 
 ================================================================================
 Navigation expression involving explicit type parameters
@@ -981,9 +1001,11 @@ SignalProducer<(), CarthageError>.empty
     (user_type
       (type_identifier)
       (type_arguments
-        (tuple_type)
-        (user_type
-          (type_identifier))))
+        (type
+          (tuple_type))
+        (type
+          (user_type
+            (type_identifier)))))
     (navigation_suffix
       (simple_identifier))))
 
@@ -1251,8 +1273,9 @@ prefix func /!(x: Int) {
     (custom_operator)
     (parameter
       (simple_identifier)
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (function_body
       (statements
         (call_expression
@@ -1380,8 +1403,9 @@ let y: Float = switch x.value {
     (pattern
       (simple_identifier))
     (type_annotation
-      (user_type
-        (type_identifier)))
+      (type
+        (user_type
+          (type_identifier))))
     (switch_statement
       (navigation_expression
         (simple_identifier)
@@ -1481,11 +1505,13 @@ parseStatements(.switch)
     (pattern
       (simple_identifier))
     (type_annotation
-      (user_type
-        (type_identifier)
-        (type_arguments
-          (user_type
-            (type_identifier)))))
+      (type
+        (user_type
+          (type_identifier)
+          (type_arguments
+            (type
+              (user_type
+                (type_identifier)))))))
     (array_literal
       (prefix_expression
         (_expression))
@@ -1580,12 +1606,13 @@ var values = [(any Value)?]()
       (simple_identifier))
     (constructor_expression
       (array_type
-        (optional_type
-          (tuple_type
-            (tuple_type_item
-              (existential_type
-                (user_type
-                  (type_identifier)))))))
+        (type
+          (optional_type
+            (tuple_type
+              (tuple_type_item
+                (existential_type
+                  (user_type
+                    (type_identifier))))))))
       (constructor_suffix
         (value_arguments)))))
 
